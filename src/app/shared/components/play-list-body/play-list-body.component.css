@@ -20,7 +20,9 @@
     color: var(--color-4);
     opacity: .7;
 }
-
+.play-list-table-header-item{
+    cursor: pointer;
+}
 .play-list-rows {
     width: 100%;
     list-style: none;

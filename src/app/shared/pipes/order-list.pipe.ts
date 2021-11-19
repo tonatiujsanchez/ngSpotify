@@ -19,7 +19,7 @@ export class OrderListPipe implements PipeTransform {
         }else if( a[args] === b[args] ){
           return 0
         }else if( a[args] > b[args] ){
-          return -1
+          return 1
         }
         return 1
       });
