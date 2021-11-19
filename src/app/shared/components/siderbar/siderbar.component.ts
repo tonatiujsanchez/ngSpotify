@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-siderbar',
@@ -27,14 +28,16 @@ export class SiderbarComponent implements OnInit {
   };
 
   customOptions: any[] = [];
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.mainMenu.defaultOptions = [
       {
         name: 'Home',
         icon: 'uil uil-estate',
-        router: ['/', 'auth']
+        router: ['/']
       },
       {
         name: 'Buscar',
@@ -78,6 +81,18 @@ export class SiderbarComponent implements OnInit {
         router: ['/']
       }
     ];
+  }
+
+  goTo( event:PointerEventInit ){
+    this.router.navigate( ['/', 'favorites'], {
+      queryParams :{
+        key1: 'value1',
+        key2: 'value1',
+        key3: 'value1'
+      }
+    } );
+    console.log(event);
+    
   }
 
 }
