@@ -5,10 +5,6 @@ import { ExampleComponent } from './example/example.component';
 
 const routes: Routes = [
   {
-    path: '🍺',
-    component: ExampleComponent
-  },
-  {
     path: 'auth',
     loadChildren: ()=> import('./modules/auth/auth.module').then( m => m.AuthModule )
   },
@@ -16,7 +12,11 @@ const routes: Routes = [
     path: '',
     component: HomePageComponent,
     loadChildren: ()=> import('./modules/home/home.module').then( m => m.HomeModule )
-  }
+  },
+  {
+    path: '🍺',
+    component: ExampleComponent
+  },
 ];
 
 @NgModule({

@@ -4,8 +4,12 @@ import { AuthPageComponent } from './pages/auth-page/auth-page.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path:'login',
     component: AuthPageComponent
+  },
+  {
+    path: '**',
+    redirectTo:'/auth/login'
   }
 ];
 
