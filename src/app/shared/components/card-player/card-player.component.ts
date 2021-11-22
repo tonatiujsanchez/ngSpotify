@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TrackModel } from '@core/models/tracks.model';
+import { MultimediaService } from '../../services/multimedia.service';
 
 @Component({
   selector: 'app-card-player',
@@ -11,9 +12,17 @@ export class CardPlayerComponent implements OnInit {
   @Input() track!: TrackModel;
   @Input() mode: 'small' | 'big' = 'big';
 
-  constructor() { }
+  constructor(
+    private multimediaService: MultimediaService
+  ) { }
 
   ngOnInit(): void {
+
   }
+
+  sendPlay( track: TrackModel ):void{    
+    this.multimediaService.callback.emit( track );
+  }
+
 
 }

@@ -35,7 +35,7 @@
             "_id": 3,
             "name": "Calypso (Original Mix)",
             "album": "Round Table Knights",
-            "cover": "_https://cdns-images.dzcdn.net/images/cover/1db3f8f185e68f26feaf0b9d72ff1645/350x350.jpg",
+            "cover": "https://cdns-images.dzcdn.net/images/cover/1db3f8f185e68f26feaf0b9d72ff1645/350x350.jpg",
             "artist": {
                 "name": "Round Table Knights",
                 "nickname": "Round Table Knights",
@@ -67,7 +67,7 @@
             "_id": 5,
             "name": "BEBE (Official Video)",
             "album": "Giolì & Assia",
-            "cover": "_https://i.scdn.co/image/ab67616d0000b27345ca41b0d2352242c7c9d4bc",
+            "cover": "https://i.scdn.co/image/ab67616d0000b27345ca41b0d2352242c7c9d4bc",
             "artist": {
                 "name": "Giolì & Assia",
                 "nickname": "Giolì & Assia",
