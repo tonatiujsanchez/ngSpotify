@@ -10,26 +10,28 @@ import { MultimediaService } from '../../services/multimedia.service';
 })
 export class MediaPlayerComponent implements OnInit, OnDestroy {
 
-  listObservers$: Subscription[] = [];
-
-  mockCover: TrackModel = {
-    name: 'Will be u?',
-    cover: 'https://i.scdn.co/image/ab67706f00000003e4793b7b7a06c3cc64341790',
-    album: 'Lofi beats',
-    url: '',
-    _id: 1
+  
+  status:string = 'pause';
+  
+  get IconPlayer():string{
+    return ( this.status === 'pause' ? 'uil-play-circle': 'uil-pause-circle' )
   }
 
+  listObservers$: Subscription[] = [];
+  
   constructor(
-    private multimediaService: MultimediaService
+    public multimediaService: MultimediaService
   ) { }
 
   ngOnInit(): void {
-    const observer1$: Subscription = this.multimediaService.callback.subscribe( (resp: TrackModel)=>{
-      console.log(resp);
-    });
 
-    this.listObservers$ = [ observer1$ ];
+    const observer1 = this.multimediaService.playerStatus$.subscribe(
+      (statusPlayer) => {
+        this.status = statusPlayer;        
+      }
+    );
+    this.listObservers$ = [observer1];
+
   }
 
   ngOnDestroy():void{
