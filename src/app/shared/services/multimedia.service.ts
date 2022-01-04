@@ -126,6 +126,13 @@ export class MultimediaService {
     ( this.audio.paused ) ? this.audio.play() : this.audio.pause();
   }
 
+  public seekAudio( porcentage: number ):void{
+    
+    const { duration } = this.audio;
 
+    const porcentageToSecond = ( porcentage * duration ) / 100; 
+
+    this.audio.currentTime = porcentageToSecond;    
+  }
 
 }
